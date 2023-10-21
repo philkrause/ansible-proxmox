@@ -39,7 +39,7 @@ Before running the playbooks, ensure you have configured the following variables
 - `PVE_IP`: The IP address or hostname of your Proxmox VE server.
 - `PVE_API_USER`: Your Proxmox API user.
 - `PVE_TOKEN_NAME`: The token name associated with your API user.
-- `PVE_TOKEN`: Your Proxmox API token.
+- `PVE_API_TOKEN`: Your Proxmox API token.
 - `VM_IDS`: A list of VM IDs.
 - `VM_NAMES`: A list of VM names.
 - `ISO_URL`: The URL or path to the ISO file for VM installations.
