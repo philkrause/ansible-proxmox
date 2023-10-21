@@ -49,6 +49,8 @@ Before running the playbooks, ensure you have configured the following variables
 - `VM_DISK_SIZE`: The size of the VM disk in GB.
 - `VM_DISK_NAME`: The name of the VM disk.
 
+**Note:** It's important to ensure that `VM_IDS` and `VM_NAMES` have the same length, where each ID corresponds to a name (e.g., VM_ID at index 0 corresponds to VM_NAME at index 0).
+
 ## Execution
 
 1. Clone this repository to your local machine.

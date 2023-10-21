@@ -1,20 +1,26 @@
 # Proxmox node and API information
 PVE_NODE:           # ie. "deathstar"
-PVE_IP:             # ie. "192.168.10.191"
+PVE_IP:             # ie. "192.168.255.255"
 PVE_PORT:           # ie. "8006"
 PVE_API_USER:       # ie. "root@pam"
 PVE_API_TOKEN_NAME: # ie. "dev"
 PVE_API_TOKEN:      # ie.  "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 
-# Vm information
+# Vm information NOTE: VM_IDS and VM_NAMES must be the same length
 VM_IDS:
-  # - 201
-  # - 202
-  # - 203
+  # - 101
+  # - 102
+  # - 103
+  # - 111
+  # - 112
+  # - 113
 VM_NAMES:
-  # - k3s-dev-201
-  # - k3s-dev-202
-  # - k3s-dev-203
+  # - k3s-dev-server-101
+  # - k3s-dev-server-102
+  # - k3s-dev-server-103
+  # - k3s-dev-worker-111
+  # - k3s-dev-worker-112
+  # - k3s-dev-worker-113
 
 #VM Configuration
 ISO_URL:      # ie. "local:iso/ubuntu-22.04.1-live-server-amd64.iso"
