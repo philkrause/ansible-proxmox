@@ -1,0 +1,20 @@
+---
+- name: Create VM using Proxmox API
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Create VM
+      uri:
+        validate_certs: no
+        url: "https://{{ PVE_IP }}:{{ PVE_PORT }}/api2/json/nodes/{{ PVE_NODE }}/qemu"
+        method: POST
+        headers:
+          Authorization: "PVEAPIToken={{ PVE_API_USER }}%21{{ PVE_API_TOKEN_NAME }}={{ PVE_API_TOKEN }}"
+        status_code: 200
+        body: "vmid={{ item.0 }}&name={{ item.1 }}&ostype=l26&sockets={{ VM_SOCKETS }}&cores={{ VM_CORES }}&memory={{ VM_MEMORY }}&cdrom={{ ISO_URL }}&sata0=nvme:{{ VM_DISK_SIZE }}"
+        body_format: form-urlencoded
+      register: response
+      loop: "{{ VM_IDS | zip(VM_NAMES) }}"
+

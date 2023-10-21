@@ -1,0 +1,25 @@
+# Proxmox node and API information
+PVE_NODE:           # ie. "deathstar"
+PVE_IP:             # ie. "192.168.10.191"
+PVE_PORT:           # ie. "8006"
+PVE_API_USER:       # ie. "root@pam"
+PVE_API_TOKEN_NAME: # ie. "dev"
+PVE_API_TOKEN:      # ie.  "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+
+# Vm information
+VM_IDS:
+  # - 201
+  # - 202
+  # - 203
+VM_NAMES:
+  # - k3s-dev-201
+  # - k3s-dev-202
+  # - k3s-dev-203
+
+#VM Configuration
+ISO_URL:      # ie. "local:iso/ubuntu-22.04.1-live-server-amd64.iso"
+VM_MEMORY:    # ie."2048" NOTE: This is the size in MB and should be an integer
+VM_SOCKETS:   # ie."1"
+VM_CORES:     # ie."1"
+VM_DISK_SIZE: # ie. "10" NOTE: This is the size in GB and should be an integer
+VM_DISK_NAME: # ie."nvme

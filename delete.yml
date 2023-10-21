@@ -1,0 +1,16 @@
+---
+- name: Delete VMs using Proxmox API
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Delete VM for each VM_ID
+      uri:
+        validate_certs: no
+        url: "https://{{ PVE_IP }}:{{ PVE_PORT }}/api2/json/nodes/{{ PVE_NODE }}/qemu/{{ item }}"
+        method: DELETE
+        headers:
+          Authorization: "PVEAPIToken={{ PVE_API_USER }}%21{{ PVE_API_TOKEN_NAME }}={{ PVE_API_TOKEN }}"
+        status_code: 200
+      loop: "{{ VM_IDS }}"

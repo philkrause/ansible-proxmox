@@ -1,0 +1,15 @@
+---
+- name: Ping Proxmox API
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Ping VM for each VM_ID
+      uri:
+        url: "https://{{ PVE_IP }}:{{ PVE_PORT }}/api2/json/nodes/"
+        method: GET
+        headers:
+          Authorization: "PVEAPIToken={{ PVE_API_USER }}%21{{ PVE_API_TOKEN_NAME }}={{ PVE_API_TOKEN }}"
+        status_code: 200
+        validate_certs: no
