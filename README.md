@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Ansible playbook is designed to interact with the Proxmox Virtual Environment (Proxmox VE) API. It provides an efficient way to create and delete identical virtual machines based on predefined VM IDs and VM names.
+This Ansible playbook is designed to interact with the Proxmox Virtual Environment (Proxmox VE) API. It provides an efficient way to create and delete identical virtual machines based on predefined VM Config.
 
 ## Prerequisites
 
