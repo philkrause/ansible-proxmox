@@ -6,6 +6,9 @@ PVE_API_USER:       # ie. "root@pam"
 PVE_API_TOKEN_NAME: # ie. "dev"
 PVE_API_TOKEN:      # ie.  "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 
+# Requird for Clone
+PVE_SOURCE_VM_ID: # ie "1000"
+
 # Vm information NOTE: VM_IDS and VM_NAMES must be the same length
 VM_IDS:
   # - 101

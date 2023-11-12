@@ -1,0 +1,18 @@
+- name: Clone VM using Proxmox API
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - local_vars.yml
+  tasks:
+    - name: Clone VM
+      uri:
+        validate_certs: no
+        url: "https://{{ PVE_IP }}:{{ PVE_PORT }}/api2/json/nodes/{{ PVE_NODE }}/qemu/{{ PVE_SOURCE_VM_ID }}/clone"
+        method: POST
+        headers:
+          Authorization: "PVEAPIToken={{ PVE_API_USER }}%21{{ PVE_API_TOKEN_NAME }}={{ PVE_API_TOKEN }}"
+        status_code: 200
+        body: "newid={{ item.0 }}&name={{ item.1 }}"
+        body_format: form-urlencoded
+      register: response
+      loop: "{{ VM_IDS | zip(VM_NAMES) }}"

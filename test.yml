@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: no
   vars_files:
-    - vars.yml
+    - local_vars.yml
   tasks:
     - name: Ping VM for each VM_ID
       uri:

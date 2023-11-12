@@ -1,2 +1,3 @@
 *.sh
 local*
+local_vars.yml
